@@ -7,7 +7,7 @@ $(document).ready(()=>{
     }
 
     const login=()=>{
-        window.location.href="./list.html"
+        window.location.href="../CASE/list.html"
     }
 
     const check1=(e,fn)=>{
