@@ -1,17 +1,17 @@
 $(document).ready(()=>{
     const username = document.getElementById("username");
-    const pass1 = document.getElementById("password");
+    const pass = document.getElementById("password");
     const check={
         usernamechk: "admin",
-        pass1chk: "12345"
+        passchk: "12345"
     }
 
     const login=()=>{
-        window.location.href="/list.html"
+        window.location.href="list.html"
     }
 
     const check1=(e,fn)=>{
-        if(username.value===check.usernamechk && pass1.value===check.pass1chk){
+        if(username.value===check.usernamechk && pass.value===check.passchk){
            e.preventDefault();
 
             fn();
