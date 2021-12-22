@@ -7,7 +7,7 @@ $(document).ready(()=>{
     }
 
     const login=()=>{
-        window.location.href="list.html"
+        window.location.href="/list.html"
     }
 
     const check1=(e,fn)=>{
@@ -21,7 +21,7 @@ $(document).ready(()=>{
         }
     }
     
-    $("#btn").on('click',(e)=>{
+    $("#qwe").on('click',(e)=>{
         check1(e,login);
     })
 }
