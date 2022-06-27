@@ -1,19 +1,18 @@
-var xhttp = new XMLHttpRequest;
-xhttp.onreadystatechange =()=>{
-    if(xhttp.readyState == 4 && xhttp.status ==200 ){
-        var x = JSON.parse(xhttp.responseText);
-        let y= '';
-        for(i=0;i<x.length;i++){
-            y+=`<li>
-                    <input type="checkbox" class="checkbox">${x[i].title}
-                </li>`            
-        document.getElementById("lists").innerHTML=y;       }
-    }
-} 
 
-xhttp.open("GET","https://jsonplaceholder.typicode.com/todos",true);
-xhttp.send();
+$(document).ready(()=>{
+    $.get(`https://jsonplaceholder.typicode.com/todos`,(res,status,xhr)=>{
 
+    let data=''
+    res.forEach(element => {
+        data+=`<li>
+                      <input type="checkbox" class="checkbox">${element.title}
+              </li>`
+              document.getElementById("lists").innerHTML=data
+
+            
+        });
+    })
+})
 
 let checkno= 0;
 
@@ -30,7 +29,7 @@ const promiseCheck=()=>{
         alert("You have completed "+x+" todos!");
     })
     .catch(()=>{
-        alert("Todays taske is over.");
+        alert("Today's Tasks is over.");
     })
 }
 
